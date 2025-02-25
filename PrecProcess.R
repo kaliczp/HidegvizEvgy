@@ -12,3 +12,6 @@ GHalom <- xts(GHalomraw[,"r"], GHtime)
 plot(GHalom, type = "h")
 
 write.zoo(GHalom, "GHalom.csv", sep = ";", dec = ",")
+
+GHalomMonth <- apply.monthly(GHalom, sum)
+write.zoo(GHalomMonth, "GHalomHavi.csv", sep = ";", dec = ",")
